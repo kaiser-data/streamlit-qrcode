@@ -10,6 +10,12 @@ from PIL import Image
 import io
 import re
 
+# Helper function to convert hex color to RGB tuple
+def hex_to_rgb(hex_color):
+    """Convert hex color string to RGB tuple"""
+    hex_color = hex_color.lstrip('#')
+    return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+
 # Page configuration
 st.set_page_config(
     page_title="QR Code Generator",
@@ -223,6 +229,10 @@ module_drawer_map = {
 def generate_qr_code(data, fill, back, style, error_lvl, box, border, logo, logo_size):
     """Generate QR code with given parameters"""
     try:
+        # Convert hex colors to RGB tuples
+        fill_rgb = hex_to_rgb(fill)
+        back_rgb = hex_to_rgb(back)
+
         qr = qrcode.QRCode(
             version=1,
             error_correction=error_correction_map[error_lvl],
@@ -237,8 +247,8 @@ def generate_qr_code(data, fill, back, style, error_lvl, box, border, logo, logo
             image_factory=StyledPilImage,
             module_drawer=module_drawer_map[style],
             color_mask=SolidFillColorMask(
-                back_color=back,
-                front_color=fill
+                back_color=back_rgb,
+                front_color=fill_rgb
             )
         )
 
