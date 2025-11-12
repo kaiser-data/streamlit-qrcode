@@ -62,18 +62,33 @@ st.markdown("**Create a QR code in seconds** - Enter your content below or choos
 # ============ TEMPLATES (QUICK START) ============
 st.markdown("### 🚀 Quick Start Templates")
 
-template_cols = st.columns(5)
+templates = [
+    ("URL", "🌐", "url", "https://example.com"),
+    ("WiFi", "📶", "wifi", ""),
+    ("Email", "📧", "email", "mailto:name@example.com"),
+    ("Phone", "📞", "phone", "tel:+1234567890"),
+    ("Text", "💬", "text", "Hello World!")
+]
 
-templates = {
-    "URL": ("🌐", "url", "https://example.com"),
-    "WiFi": ("📶", "wifi", ""),
-    "Email": ("📧", "email", "mailto:name@example.com"),
-    "Phone": ("📞", "phone", "tel:+1234567890"),
-    "Text": ("💬", "text", "Hello World!")
-}
+# Create responsive grid layout (3 columns on first row, 2 on second)
+col1, col2, col3 = st.columns(3)
+cols = [col1, col2, col3]
 
-for idx, (name, (icon, template_id, placeholder)) in enumerate(templates.items()):
-    with template_cols[idx]:
+for idx, (name, icon, template_id, placeholder) in enumerate(templates[:3]):
+    with cols[idx]:
+        if st.button(f"{icon}\n{name}", use_container_width=True, key=f"btn_{template_id}"):
+            st.session_state.template_type = template_id
+            if template_id == "wifi":
+                st.session_state.qr_data = ""
+            else:
+                st.session_state.qr_data = placeholder
+            st.rerun()
+
+col4, col5, col6 = st.columns(3)
+cols2 = [col4, col5, col6]
+
+for idx, (name, icon, template_id, placeholder) in enumerate(templates[3:]):
+    with cols2[idx]:
         if st.button(f"{icon}\n{name}", use_container_width=True, key=f"btn_{template_id}"):
             st.session_state.template_type = template_id
             if template_id == "wifi":
