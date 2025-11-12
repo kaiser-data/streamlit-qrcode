@@ -74,12 +74,13 @@ templates = {
 
 for idx, (name, (icon, template_id, placeholder)) in enumerate(templates.items()):
     with template_cols[idx]:
-        if st.button(f"{icon}\n{name}", use_container_width=True):
+        if st.button(f"{icon}\n{name}", use_container_width=True, key=f"btn_{template_id}"):
             st.session_state.template_type = template_id
             if template_id == "wifi":
                 st.session_state.qr_data = ""
             else:
                 st.session_state.qr_data = placeholder
+            st.rerun()
 
 # ============ SMART INPUT AREA ============
 st.markdown("---")
@@ -120,7 +121,7 @@ else:
         value=st.session_state.qr_data,
         height=100,
         placeholder="Type or paste your content here...",
-        key="main_input"
+        key=f"input_{st.session_state.template_type}"
     )
     st.session_state.qr_data = qr_data
 
