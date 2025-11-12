@@ -387,12 +387,3 @@ with st.expander("ℹ️ Tips & Examples"):
     - Ensure good contrast (dark on light background)
     - Maintain minimum size (2×2 cm for print)
     """)
-
-# Footer
-st.markdown("---")
-st.markdown(
-    "<div style='text-align: center; color: #888; font-size: 14px;'>"
-    "Made with ❤️ using Streamlit | Scan safely!"
-    "</div>",
-    unsafe_allow_html=True
-)
