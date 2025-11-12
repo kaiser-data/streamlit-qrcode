@@ -1,148 +1,241 @@
 # 📱 QR Code Generator
 
-A simple, user-friendly QR code generator built with Streamlit. Create custom QR codes with various styles, colors, and even add logos - all in your browser!
+**Free & Open Source** • **No Ads** • **Privacy-Friendly**
+
+A beautiful, easy-to-use QR code generator built with Streamlit. Create custom QR codes with various styles, colors, and logos - all in your browser, completely free!
+
+![QR Code Generator Screenshot](screenshot.png)
+
+---
 
 ## ✨ Features
 
-- **🚀 Quick Start Templates** - One-click templates for URL, WiFi, Email, Phone, and Text
-- **🎨 Customization Options** - Colors, shapes, sizes, and error correction levels
-- **🖼️ Logo Integration** - Add your logo or image to the center of QR codes
-- **📱 Mobile-Friendly** - Works perfectly on phones and tablets
-- **⬇️ Instant Download** - Download QR codes as PNG images
-- **✅ Input Validation** - Smart hints and warnings for better results
-- **💡 Helpful Tips** - Built-in examples and best practices
+### 🚀 **Quick Start Templates**
+- **URL** - Website links and landing pages
+- **WiFi** - Share WiFi credentials instantly
+- **Email** - mailto links with pre-filled subject/body
+- **Phone** - Click-to-call phone numbers
+- **Text** - Any plain text message
 
-## 🚀 Quick Start
+### 🎨 **Customization Options**
+- **Colors** - Custom foreground and background colors
+- **Shapes** - Square, Rounded, Circle, Gapped Square modules
+- **Resolution** - Adjustable size (5-30 pixels per module)
+- **Error Correction** - 4 levels (Low, Medium, High, Very High)
+- **Logo Integration** - Add your logo to the center of QR codes
 
-### Run Locally
+### 🛡️ **Privacy First**
+- ✅ No data collection
+- ✅ No tracking or analytics
+- ✅ Everything runs in your browser
+- ✅ No registration required
+- ✅ Open source code
 
-1. Clone this repository:
+---
+
+## 🚀 Live Demo
+
+**Try it now:** [streamlit-qrcode.streamlit.app](https://streamlit-qrcode.streamlit.app) *(update with your actual URL)*
+
+---
+
+## 💻 Run Locally
+
+### Prerequisites
+- Python 3.7 or higher
+- pip package manager
+
+### Installation
+
 ```bash
-git clone <your-repo-url>
-cd streamlit-QRCode
-```
+# Clone the repository
+git clone https://github.com/kaiser-data/streamlit-qrcode.git
+cd streamlit-qrcode
 
-2. Install dependencies:
-```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
-3. Run the app:
-```bash
+# Run the app
 streamlit run qr_generator.py
 ```
 
-4. Open your browser to `http://localhost:8501`
+The app will open in your browser at `http://localhost:8501`
 
-### Deploy to Streamlit Cloud (Free Hosting)
+---
 
-1. **Fork/Upload to GitHub**
-   - Create a new repository on GitHub
-   - Push this code to your repository
+## 🎯 Use Cases
 
-2. **Deploy on Streamlit Cloud**
-   - Go to [share.streamlit.io](https://share.streamlit.io)
-   - Click "New app"
-   - Select your repository, branch, and `qr_generator.py`
-   - Click "Deploy"
+| Use Case | Example | Description |
+|----------|---------|-------------|
+| **Marketing** | Product pages, promotions | Link to campaigns and track engagement |
+| **Events** | Tickets, schedules | Easy access to event information |
+| **WiFi Sharing** | Guest network access | Share WiFi without typing passwords |
+| **Business Cards** | vCard, LinkedIn | Digital contact information |
+| **Restaurants** | Menus, ordering | Contactless menu access |
+| **Education** | Resources, assignments | Quick access to learning materials |
 
-3. **That's it!** Your app will be live in a few minutes at a free Streamlit URL
+---
 
 ## 📖 How to Use
 
 ### Basic Usage
-
-1. **Choose a template** (optional) - Click one of the quick start buttons
-2. **Enter your content** - Type or paste your text/URL
-3. **Download** - Click the download button to save your QR code
+1. **Choose a template** or enter content directly
+2. **(Optional)** Customize colors, shapes, and size
+3. **Download** your QR code as PNG
 
 ### WiFi QR Codes
+1. Click the **WiFi** template
+2. Enter your network name and password
+3. Select security type (WPA/WEP/None)
+4. Download and share!
 
-1. Click the "WiFi" template button
-2. Enter your network name (SSID)
-3. Enter your password
-4. Select security type
-5. Download and share!
+### Adding Logos
+1. Expand **"Customize Appearance"**
+2. Go to **Logo** tab
+3. Upload your logo (PNG recommended)
+4. Adjust logo size (keep under 30% for best scanning)
+5. Use **High** or **Very High** error correction
 
-### Customization
-
-Click "🎨 Customize Appearance (Optional)" to access:
-
-- **Colors & Style** - Change QR code and background colors, select module shapes
-- **Size** - Adjust resolution and border thickness
-- **Logo** - Upload a logo to place in the center
-
-## 📋 Requirements
-
-- Python 3.7+
-- streamlit >= 1.28.0
-- qrcode[pil] >= 7.4.2
-- Pillow >= 10.0.0
-
-## 🎯 Use Cases
-
-- **Marketing** - Create QR codes for websites, social media, promotions
-- **Events** - WiFi access, event registration, contact info
-- **Business Cards** - vCard, contact details, LinkedIn profiles
-- **Menus** - Restaurant menus, price lists
-- **Education** - Learning resources, assignments, feedback forms
-- **Personal** - Share WiFi, contact info, messages
-
-## 💡 Tips for Best Results
-
-- Keep content short for easier scanning
-- Use URL shorteners for long links
-- Test QR codes before printing
-- Use high error correction when adding logos
-- Ensure good contrast (dark on light background)
-- Maintain minimum print size of 2×2 cm
+---
 
 ## 🛠️ Technical Details
 
-### QR Code Features
+### Built With
+- **[Streamlit](https://streamlit.io)** - Web framework
+- **[python-qrcode](https://github.com/lincolnloop/python-qrcode)** - QR code generation
+- **[Pillow](https://python-pillow.org/)** - Image processing
 
-- **Error Correction Levels**: Low (7%), Medium (15%), High (25%), Very High (30%)
+### Features
+- **Error Correction Levels**: L (7%), M (15%), Q (25%), H (30%)
 - **Module Shapes**: Square, Rounded, Circle, Gapped Square
-- **Output Format**: PNG
-- **Resolution**: Adjustable (5-30 pixels per module)
+- **Output Format**: PNG with adjustable resolution
+- **Logo Support**: Centered logo with automatic sizing
 
 ### Supported QR Code Types
-
 - URLs and websites
-- WiFi credentials
-- Email addresses
-- Phone numbers
+- WiFi credentials (WPA/WEP/Open)
+- Email addresses (mailto links)
+- Phone numbers (tel links)
 - SMS messages
 - Plain text
 - Any custom formatted string
 
-## 🤝 Contributing
+---
 
-Contributions are welcome! Feel free to:
+## 📦 Deployment
 
-- Report bugs
-- Suggest new features
-- Submit pull requests
-- Improve documentation
+### Streamlit Cloud (Free)
 
-## 📄 License
+1. **Fork this repository** or push to your GitHub account
 
-This project is open source and available under the MIT License.
+2. **Deploy to Streamlit Cloud:**
+   - Go to [share.streamlit.io](https://share.streamlit.io)
+   - Click "New app"
+   - Select your repository: `kaiser-data/streamlit-qrcode`
+   - Main file: `qr_generator.py`
+   - Click "Deploy"
 
-## 🙏 Acknowledgments
+3. **Your app will be live** at a free Streamlit URL in ~2 minutes!
 
-- Built with [Streamlit](https://streamlit.io)
-- QR code generation by [python-qrcode](https://github.com/lincolnloop/python-qrcode)
-- Image processing by [Pillow](https://python-pillow.org/)
-
-## 📞 Support
-
-If you encounter any issues or have questions:
-
-1. Check the "ℹ️ Tips & Examples" section in the app
-2. Review this README
-3. Open an issue on GitHub
+### Other Platforms
+- **Heroku**: Add `setup.sh` and `Procfile`
+- **Docker**: Build from included `Dockerfile`
+- **VPS**: Run with `streamlit run qr_generator.py --server.port 80`
 
 ---
 
-**Made with ❤️ using Streamlit**
+## 💡 Best Practices
+
+### For Optimal Scanning
+- ✅ Keep content short (use URL shorteners for long links)
+- ✅ Use high contrast (dark on light background)
+- ✅ Minimum print size: 2×2 cm (0.8×0.8 inches)
+- ✅ Test QR codes before mass printing
+- ✅ Use higher error correction when adding logos
+
+### For Logo Integration
+- ✅ Use transparent PNG images
+- ✅ Keep logo size under 30% of QR code
+- ✅ Use "High" or "Very High" error correction
+- ✅ Test scannability after adding logo
+- ✅ Ensure logo doesn't obscure critical areas
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. **Fork the repository**
+2. **Create a feature branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
+4. **Push to the branch** (`git push origin feature/AmazingFeature`)
+5. **Open a Pull Request**
+
+### Ideas for Contributions
+- [ ] Additional QR code styles
+- [ ] Batch QR code generation
+- [ ] SVG export option
+- [ ] QR code analytics
+- [ ] More customization options
+- [ ] Internationalization (i18n)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+### What this means:
+- ✅ Free to use for personal and commercial projects
+- ✅ Modify and distribute as you like
+- ✅ No warranty or liability
+- ✅ Must include original license and copyright
+
+---
+
+## 🙏 Acknowledgments
+
+- **QR Code Technology**: Invented by Denso Wave (1994)
+- **Streamlit Team**: For the amazing framework
+- **python-qrcode**: For the robust QR generation library
+- **Community**: For feedback and contributions
+
+---
+
+## 📞 Support
+
+- **Issues**: [GitHub Issues](https://github.com/kaiser-data/streamlit-qrcode/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/kaiser-data/streamlit-qrcode/discussions)
+- **Star this repo** if you find it useful! ⭐
+
+---
+
+## 🔒 Privacy & Security
+
+This app is designed with privacy in mind:
+
+- **No data storage**: QR codes are generated in your browser and not stored
+- **No tracking**: No analytics or tracking cookies
+- **No server-side processing**: All processing happens client-side
+- **Open source**: Full code transparency - see exactly what it does
+- **No third-party services**: No external API calls or data sharing
+
+---
+
+## 📊 Project Stats
+
+![GitHub stars](https://img.shields.io/github/stars/kaiser-data/streamlit-qrcode?style=social)
+![GitHub forks](https://img.shields.io/github/forks/kaiser-data/streamlit-qrcode?style=social)
+![GitHub issues](https://img.shields.io/github/issues/kaiser-data/streamlit-qrcode)
+![GitHub license](https://img.shields.io/github/license/kaiser-data/streamlit-qrcode)
+
+---
+
+<div align="center">
+
+**Made with Python & Streamlit**
+
+[Report Bug](https://github.com/kaiser-data/streamlit-qrcode/issues) • [Request Feature](https://github.com/kaiser-data/streamlit-qrcode/issues) • [View Demo](https://streamlit-qrcode.streamlit.app)
+
+</div>
