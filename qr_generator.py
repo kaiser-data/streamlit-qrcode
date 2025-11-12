@@ -252,6 +252,9 @@ def generate_qr_code(data, fill, back, style, error_lvl, box, border, logo, logo
             )
         )
 
+        # Convert to standard PIL Image for Streamlit compatibility
+        img = img.convert('RGB')
+
         # Add logo if provided
         if logo is not None:
             logo_img = Image.open(logo)
