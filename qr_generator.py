@@ -57,7 +57,7 @@ if 'show_advanced' not in st.session_state:
 
 # Header
 st.title("📱 QR Code Generator")
-st.markdown("**Create a QR code in seconds** - Enter your content below or choose a template")
+st.markdown("**Free & Open Source** • No Ads • Privacy-Friendly")
 
 # ============ TEMPLATES (QUICK START) ============
 st.markdown("### 🚀 Quick Start Templates")
