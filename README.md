@@ -124,17 +124,30 @@ The app will open in your browser at `http://localhost:8501`
 
 ## 📦 Deployment
 
-### Streamlit Cloud (Free)
+### Hugging Face Spaces (Recommended - Free)
+
+**✅ Better Privacy** - Only requires Space-level access, not full GitHub account access.
+
+**📖 Complete Guide:** See [DEPLOY_HUGGINGFACE.md](DEPLOY_HUGGINGFACE.md) for detailed step-by-step instructions.
+
+**Quick Start:**
+1. Create account at [huggingface.co/join](https://huggingface.co/join)
+2. Create new Space with **Docker SDK**
+3. Upload: `qr_generator.py`, `requirements.txt`, `Dockerfile`, `README_HF.md` (as README.md)
+4. Wait 2-5 minutes for build
+5. Your app is live! 🎉
+
+### Streamlit Cloud (Alternative)
+
+⚠️ **Note:** Requires extensive GitHub permissions (full repository access).
 
 1. **Fork this repository** or push to your GitHub account
-
 2. **Deploy to Streamlit Cloud:**
    - Go to [share.streamlit.io](https://share.streamlit.io)
    - Click "New app"
    - Select your repository: `kaiser-data/streamlit-qrcode`
    - Main file: `qr_generator.py`
    - Click "Deploy"
-
 3. **Your app will be live** at a free Streamlit URL in ~2 minutes!
 
 ### Other Platforms
