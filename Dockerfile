@@ -12,7 +12,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application files
 COPY qr_generator.py .
-COPY .streamlit/config.toml .streamlit/
 
 # Expose Streamlit port
 EXPOSE 7860
