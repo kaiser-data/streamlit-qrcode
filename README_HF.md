@@ -4,6 +4,7 @@ emoji: 📱
 colorFrom: green
 colorTo: blue
 sdk: docker
+app_file: qr_generator.py
 pinned: false
 license: mit
 ---
